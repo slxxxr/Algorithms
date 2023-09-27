@@ -10,6 +10,7 @@
 #include <queue>
 #include <random>
 #include <numeric>
+#include <chrono>
 
 typedef long double db;
 typedef long long ll;
@@ -30,6 +31,7 @@ typedef long long ll;
 using namespace std;
 const ll inf = 1e18;
 mt19937 rnd(4321);
+//mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
 
 
 int main() {
