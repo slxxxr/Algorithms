@@ -1,11 +1,6 @@
-#include <iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-
 void comb(int N, int K)
 {
-    std::string bitmask(K, 1); // K leading 1's
+    string bitmask(K, 1); // K leading 1's
     bitmask.resize(N, 0); // N-K trailing 0's
     // print integers and permute bitmask
     do {
@@ -16,7 +11,4 @@ void comb(int N, int K)
         std::cout << std::endl;
     } while (std::prev_permutation(bitmask.begin(), bitmask.end()));
 }
-int main()
-{
-    comb(5, 2);
-}
+
