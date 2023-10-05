@@ -28,7 +28,7 @@ ll pollard(ll n) {
     auto nxt = [&](ll seed) { return sum(mul(seed, seed, n), 3, n); };
     ll x = rnd() % n;
     ll y = x;
-    for (ll it = 0; it < 1e6; ++it) {//можно поиграться с границей
+    for (ll it = 0; it < 1000000; ++it) {//можно поиграться с границей
         if (x != y && gcd(abs(x - y), n) != 1) {
             return gcd(abs(x - y), n);
         }
