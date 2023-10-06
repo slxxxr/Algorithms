@@ -32,6 +32,7 @@ using namespace std;
 const ll inf = 1e18;
 mt19937 rnd(4321);
 //mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
+ll random(ll l, ll r) { return (rnd() % (++r - l) + l); }
 
 
 int main() {
