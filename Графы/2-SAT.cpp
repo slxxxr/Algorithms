@@ -1,3 +1,7 @@
+ll n, m, cnt_perem;
+vector<vector<ll>> gr, gr_obr;
+vll used, order, comp;
+
 void top_sort(ll v) {
     used[v] = 1;
     for (ll u : gr[v]) {
