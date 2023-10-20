@@ -39,7 +39,7 @@ void factorize_sqrt(ll x, unordered_map<ll, ll>& divisors) {
     }
     if (x > 1) { divisors[x]++; }
 }
-void factorize(ll n, unordered_map<ll,ll>& divisors) {
+void factorize(ll n, unordered_map<ll,ll>& divisors) {//map делителей: ключ - простой делитель, значение ключа - степень вхождения простого делителя
 	if (n == 1) { return; }
     if (n < 1e12) {
         factorize_sqrt(n, divisors);
