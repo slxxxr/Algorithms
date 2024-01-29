@@ -1,20 +1,18 @@
-vector<int> z(string s) {
-	vector<int> ans = { 0 };
-	int l = 0, r = 0, a = 0;
-	for (int i = 1; i < size(s); i++) {
-		a = 0;
-		if (i <= r) {
-			a = min(ans[i-l],(int)r - i);
-		}
-		while (s[i + a] == s[a] && i+ a< size(s)) {
-			a++;
-		}
-		if (i+ a > r) {
-			r = min(i + a - 1,(int) size(s) - 1);
-			l = i;
-			
-		}
-		ans.push_back(min(a,(int) size(s)-1));
-	}
-	return ans;
+vector<int> z_function(string& s) {
+    int n = s.size();
+    vector<int> z(n);
+    int l = 0, r = 0;
+    for(int i = 1; i < n; i++) {
+        if(i < r) {
+            z[i] = min(r - i, z[i - l]);
+        }
+        while(i + z[i] < n && s[z[i]] == s[i + z[i]]) {
+            z[i]++;
+        }
+        if(i + z[i] > r) {
+            l = i;
+            r = i + z[i];
+        }
+    }
+    return z;
 }
