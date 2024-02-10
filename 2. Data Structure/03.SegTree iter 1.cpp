@@ -16,7 +16,7 @@ struct segtree {
 		}
 	}
  
-	void update(ll ind, ll NewValue) {
+	void update(ll ind, ll NewValue) { // 0-index
 		ind += n - 1;
 		tree[ind] = NewValue;
  
@@ -27,7 +27,7 @@ struct segtree {
 	}
  
  
-	ll sum(ll l, ll r) {
+	ll sum(ll l, ll r) {// sum[l, r) 0-index
  
 		l += n - 1;
 		r += n - 1;
