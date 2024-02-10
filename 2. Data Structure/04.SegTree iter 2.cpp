@@ -16,7 +16,7 @@ struct segtree {
 		}
 	}
 
-	ll get(ll ind) {
+	ll get(ll ind) { //0-index
 		ind += n - 1;
 		ll res = 0;
 
@@ -28,7 +28,7 @@ struct segtree {
 	}
 
 
-	void update(ll l, ll r, ll value) { // [l, r) +=value
+	void update(ll l, ll r, ll value) { // [l, r) +=value 0-index
 		l += n - 1;
 		r += n - 1;
 
