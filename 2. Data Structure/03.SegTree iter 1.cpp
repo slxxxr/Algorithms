@@ -27,10 +27,9 @@ struct segtree {
 	}
  
  
-	ll sum(ll l, ll r) {// sum[l, r) 0-index
- 
+	ll sum(ll l, ll r) {// sum[l, r] 0-index
 		l += n - 1;
-		r += n - 1;
+		r += n;
 		ll result = 0;
  
 		while (l < r) {
