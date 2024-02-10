@@ -28,9 +28,9 @@ struct segtree {
 	}
 
 
-	void update(ll l, ll r, ll value) { // [l, r) +=value 0-index
+	void update(ll l, ll r, ll value) { // [l, r] +=value 0-index
 		l += n - 1;
-		r += n - 1;
+		r += n;
 
 		while (l < r) {
 			if (l % 2 == 0) {
