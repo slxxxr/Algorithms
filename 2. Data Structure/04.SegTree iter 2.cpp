@@ -11,9 +11,6 @@ struct segtree {
 		for (ll i = 0; i < arr.size(); i++) {
 			tree[n + i - 1] = arr[i];
 		}
-		for (ll i = n - 2; i >= 0; i--) {
-			tree[i] = tree[i * 2 + 1] + tree[i * 2 + 2];
-		}
 	}
 
 	ll get(ll ind) { //0-index
