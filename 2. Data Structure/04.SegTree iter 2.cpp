@@ -15,7 +15,7 @@ struct segtree {
 
 	ll get(ll ind) { //0-index
 		ind += n - 1;
-		ll res = 0;
+		ll res = tree[0];
 
 		while (ind > 0) {
 			res += tree[ind];
