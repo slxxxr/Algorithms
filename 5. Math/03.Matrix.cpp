@@ -1,6 +1,6 @@
 typedef vector<vector<ll>> matrix;
 ll n, m;
-matrix& matmul(matrix& a, matrix& b) {
+matrix matmul(matrix& a, matrix& b) {
     matrix c(n, vector<ll>(m, 0));
     for (ll i = 0; i < n; i++)
         for (ll j = 0; j < m; j++)
@@ -8,7 +8,7 @@ matrix& matmul(matrix& a, matrix& b) {
                 c[i][j] += a[i][t] * b[t][j];
     return c;
 }
-matrix& binpow(matrix& a, ll p) {
+matrix binpow(matrix& a, ll p) {
     matrix b(n, vector<ll>(n, 0));
     for (ll i = 0; i < n; i++)
         b[i][i] = 1;
