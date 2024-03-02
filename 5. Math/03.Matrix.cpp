@@ -1,16 +1,16 @@
-typedef vector<vector<int>> matrix;
-int n, m;
+typedef vector<vector<ll>> matrix;
+ll n, m;
 matrix& matmul(matrix& a, matrix& b) {
-    matrix c(n, vector<int>(m, 0));
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
-            for (int t = 0; t < k; t++)
+    matrix c(n, vector<ll>(m, 0));
+    for (ll i = 0; i < n; i++)
+        for (ll j = 0; j < m; j++)
+            for (ll t = 0; t < k; t++)
                 c[i][j] += a[i][t] * b[t][j];
     return c;
 }
-matrix& binpow(matrix& a, int p) {
-    matrix b(n, vector<int>(n, 0));
-    for (int i = 0; i < n; i++)
+matrix& binpow(matrix& a, ll p) {
+    matrix b(n, vector<ll>(n, 0));
+    for (ll i = 0; i < n; i++)
         b[i][i] = 1;
 
     while (p > 0) {
@@ -22,6 +22,7 @@ matrix& binpow(matrix& a, int p) {
 
     return b;
 }
+
 vector<double> gauss(matrix a) {
     int n = (int)a.size();
     for (int i = 0; i < n; i++) {
