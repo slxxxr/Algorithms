@@ -11,6 +11,7 @@
 #include <random>
 #include <numeric>
 #include <chrono>
+#include <iomanip>
 
 typedef long double db;
 typedef long long ll;
@@ -33,8 +34,9 @@ const ll inf = 1e18;
 mt19937 rnd(4321);
 //mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
 ll random(ll l, ll r) { return (rnd() % (++r - l) + l); } //random in [l...r]
-/*cout.setf(ios_base::fixed); - убрать экспоненциальный вывод.
-cout.precision(10); - вывод с заданной точностью */
+/* cout << fixed; - убрать экспоненциальный вывод.
+ cout << setprecision(10); - вывод с заданной точностью.
+ work with #include <iomanip> */
 
 int main() {
     ios::sync_with_stdio(0);
