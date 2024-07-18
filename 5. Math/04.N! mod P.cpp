@@ -1,4 +1,4 @@
-N!(без учета чисел, кратных P) mod P, за P*log_p(N)
+// N!(без учета чисел, кратных P) mod P, за P*log_p(N)
 ll factmod(ll n, ll p) {
 	ll res = 1;
 	while (n > 1) {
