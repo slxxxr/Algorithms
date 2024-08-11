@@ -3,6 +3,7 @@ class Combinatorics {
 public:
     
     ll get_c(ll k, ll n) { // return C(k,n) = n! / ((n-k)! * k!) , k <= n; 
+        if (k > n) { return 0; }
         return ((fact[n] * inv_f[n - k]) % mod * inv_f[k]) % mod;
     }
 
@@ -31,12 +32,13 @@ private:
     vll fact, inv_f; // 1 - index, Factorial(i) = fact[i]
     
     ll binpow(ll a, ll n) {
+        a %= mod;
         ll res = 1;
         while (n != 0) {
             if (n & 1) {
-                res = (res % mod * a % mod) % mod;
+                res = (res * a) % mod;
             }
-            a = (a % mod * a % mod) % mod;
+            a = (a * a) % mod;
             n >>= 1;
         }
         return res;
