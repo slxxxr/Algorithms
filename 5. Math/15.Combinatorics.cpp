@@ -11,7 +11,7 @@ public:
         return get_c(n, 2 * n);
     }
 
-    void build(ll _maxn, ll _mod) { // Calculate all factorials and inv. factorials, O(N)
+    Combinatorics(ll _maxn, ll _mod) { // Calculate all factorials and inv. factorials, O(N)
         maxn = _maxn; mod = _mod;
 
         fact.assign(maxn + 1, 1);
