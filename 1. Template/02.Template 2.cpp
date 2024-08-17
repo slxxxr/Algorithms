@@ -12,9 +12,8 @@ using namespace std;
 
 typedef long double db;
 typedef long long ll;
-typedef unsigned long long ull;
 
-#define write(x) for(auto &i: x) cout << i << " "
+#define print(x) for(auto it = x.begin(); it != x.end(); it++) cout << *it << " \n"[it == --x.end()]
 #define all(x) (x).begin(), (x).end()
 #define endl '\n'
 #define forn(i, n) for (ll i = 0; i < (ll)(n); i++)
@@ -33,6 +32,7 @@ ll random(ll l, ll r) { return (rnd() % (++r - l) + l); } //random in [l...r]
 
 
 void solve() {
+    
 }
 
 
