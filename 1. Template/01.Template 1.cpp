@@ -38,7 +38,7 @@ ll random(ll l, ll r) { return (rnd() % (++r - l) + l); } //random in [l...r]
  cout << setprecision(10); - вывод с заданной точностью.
  work with #include <iomanip> */
 
-int main() {
+signed main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
   
