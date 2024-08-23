@@ -1,4 +1,5 @@
-struct segtree {
+class segtree {
+private:
 
 	struct node {
 		ll suma;
@@ -8,24 +9,37 @@ struct segtree {
 
 	node comb(node& a, node& b) {
 		node res = zero;
-		res.suma += a.suma + b.suma;
+		res.suma = a.suma + b.suma;
 		return res;
 	}
 
 	vector<node> tree;
 	ll n = 1;
 
-	void build(vll& arr) {
+
+public:
+
+	segtree(vll& arr) {
 		while (n < (ll)arr.size()) { n *= 2; }
 		//n = arr.size();
 		tree.assign(2 * n - 1, zero);
 
-		for (ll i = 0; i < arr.size(); i++) {
+		for (ll i = 0; i < (ll)arr.size(); i++) {
 			tree[n + i - 1] = { arr[i] };
 		}
 	}
 
-	ll get(ll ind) { //0-index
+	segtree(ll _N, ll _value) {
+		while (n < _N) { n *= 2; }
+		//n = _N;
+		tree.assign(2 * n - 1, zero);
+
+		for (ll i = 0; i < _N; i++) {
+			tree[n + i - 1] = { _value };
+		}
+	}
+
+	ll get(ll ind) { //return arr[ind], 0-index
 		ind += n - 1;
 		node res = tree[0];
 
@@ -37,7 +51,7 @@ struct segtree {
 	}
 
 
-	void update(ll l, ll r, ll value) { // [l, r] +=value 0-index
+	void update(ll l, ll r, ll value) { // [l, r] += value, 0-index
 		l += n - 1;
 		r += n;
 
