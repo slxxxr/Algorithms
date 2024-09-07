@@ -7,7 +7,7 @@ private:
     void calc_depth(int v, vector<vector<int>>& gr, int p = -1) {
         depth[v] = (p == -1 ? 0 : depth[p] + 1);
         up[v][0] = p;
-        for (ll u : gr[v]) {
+        for (int u : gr[v]) {
             if (u != p) {
                 calc_depth(u, gr, v);
             }
