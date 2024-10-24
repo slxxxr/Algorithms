@@ -1,14 +1,18 @@
 typedef vector<vector<ll>> matrix;
-ll n, m;
-matrix matmul(matrix& a, matrix& b) {
+const ll mod = 1e9 + 7;
+
+matrix matmul(matrix &a, matrix &b) { // A[n][k] * B[k][m]; Time: O(N * M * K)
+    int n = a.size(), k = a[0].size(), m = b[0].size();
     matrix c(n, vector<ll>(m, 0));
-    for (ll i = 0; i < n; i++)
-        for (ll j = 0; j < m; j++)
-            for (ll t = 0; t < k; t++)
-                c[i][j] += a[i][t] * b[t][j];
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            for (int t = 0; t < k; t++)
+                c[i][j] = (c[i][j] + a[i][t] * b[t][j] % mod) % mod;
     return c;
 }
-matrix binpow(matrix& a, ll p) {
+
+matrix binpow(matrix &a, ll p) {// Time: O(N ^ 3 * logP)
+    int n = a.size();
     matrix b(n, vector<ll>(n, 0));
     for (ll i = 0; i < n; i++)
         b[i][i] = 1;
@@ -19,7 +23,6 @@ matrix binpow(matrix& a, ll p) {
         a = matmul(a, a);
         p >>= 1;
     }
-
     return b;
 }
 
